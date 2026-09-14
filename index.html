@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="토닥토닥 동물마을 Unity 출시 후보의 자동 플레이 화면과 검증 결과">
+<meta name="color-scheme" content="light dark">
 <title>토닥토닥 동물마을 빌드 리포트</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap">
 <style>
@@ -5,6 +12,8 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1F1D1A;--paper:#2A2723;--ink:#F1EBE0;--ink2:#B7AE9F;--line:#3E3931;--green:#7CC493;--green-l:#24382B;--orange:#FFA07E;--orange-l:#42302A;--sky:#5FA8CC;--sky-l:#22323A;--purple:#B3A6FF;--purple-l:#2E2A44;--yellow:#FFD98A;--pink-l:#3F2A31;--shadow:0 2px 0 #171512;--scrim:rgba(0,0,0,0.9)}}
 :root[data-theme="dark"]{--bg:#1F1D1A;--paper:#2A2723;--ink:#F1EBE0;--ink2:#B7AE9F;--line:#3E3931;--green:#7CC493;--green-l:#24382B;--orange:#FFA07E;--orange-l:#42302A;--sky:#5FA8CC;--sky-l:#22323A;--purple:#B3A6FF;--purple-l:#2E2A44;--yellow:#FFD98A;--pink-l:#3F2A31;--shadow:0 2px 0 #171512;--scrim:rgba(0,0,0,0.9)}
 body{background:var(--bg);color:var(--ink);font-family:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.6;margin:0}
+.skip{position:fixed;left:12px;top:12px;z-index:100;padding:10px 14px;border-radius:8px;background:var(--paper);color:var(--ink);transform:translateY(-180%)}
+.skip:focus{transform:none;outline:3px solid var(--sky)}
 .wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
 h1,h2,h3{font-family:"Jua","Gowun Dodum",sans-serif;font-weight:400;letter-spacing:-0.01em;text-wrap:balance;margin:0}
 h1{font-size:2.4rem;color:var(--green)}
@@ -48,10 +57,13 @@ ul,ol{padding-left:22px;margin:8px 0}li{margin:4px 0}
 @media (max-width:600px){#lb button{width:42px;height:42px;font-size:1.2rem}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
-<div class="wrap">
+</head>
+<body>
+<a class="skip" href="#report">본문으로 건너뛰기</a>
+<main class="wrap" id="report">
 <div class="eyebrow">고려대학교 심리학부 25-2 캡스톤디자인 · Unity 6 빌드</div>
 <h1>토닥토닥 동물마을 빌드 리포트</h1>
-<p class="lead">아동을 위한 사회적응 미니게임 모음. 이 페이지는 Unity Windows 자동 플레이와 실제 게임 카메라·UI를 별도 렌더링한 화면을 기록합니다. 스토어 심사·실기기 검증·전문가 승인을 뜻하지 않습니다. 생성 시각 2026-09-14 00:36.</p>
+<p class="lead">아동을 위한 사회적응 미니게임 모음. 이 페이지는 Unity Windows 자동 플레이와 실제 게임 카메라·UI를 별도 렌더링한 화면을 기록합니다. 스토어 심사·실기기 검증·전문가 승인을 뜻하지 않습니다. 생성 시각 2026-09-14 14:29.</p>
 
 <div class="status">
   <div class="tile ok"><div class="k">자동 투어 오류</div><div class="v">0건</div></div>
@@ -109,7 +121,8 @@ ul,ol{padding-left:22px;margin:8px 0}li{margin:4px 0}
 <li><b>아트 고도화(선택)</b> — 프롤로그·장소 배너·스토어 그래픽을 일러스트로 교체하면 첫인상이 더 좋아집니다. 캐릭터는 전문 아티스트 모델로 교체 가능(같은 FBX 규격).</li>
 </ol>
 <p class="lead">저장 데이터 복원을 포함한 재검증: <code>python tools/validate-unity-release.py</code> · 재빌드: <code>tools/unity-build.ps1 -Target apk|aab|ios</code></p>
-</div>
+<p class="lead"><a href="app.html">앱 안내</a> · <a href="privacy.html">개인정보처리방침</a></p>
+</main>
 
 <div id="lb" role="dialog" aria-modal="true" aria-label="스크린샷 크게 보기">
   <button class="close" aria-label="닫기">✕</button>
@@ -134,3 +147,5 @@ ul,ol{padding-left:22px;margin:8px 0}li{margin:4px 0}
   var sx = 0; lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true}); lb.addEventListener('touchend', function(e){ var dx = e.changedTouches[0].clientX - sx; if (dx > 50) show(cur - 1); else if (dx < -50) show(cur + 1); });
 })();
 </script>
+</body>
+</html>
